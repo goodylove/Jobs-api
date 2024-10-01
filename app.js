@@ -55,10 +55,11 @@ app.use(xss());
 
 
 app.get('/',(req,res)=>{
-    res.send('Hello from the API')
+    res.send('<h1>Jobs Api </h1> <a href="/api-docs">Documentation</a>')
  
 })
 
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 app.use("/api/v1/auth",authRoute)
 
