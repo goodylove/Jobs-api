@@ -42,6 +42,12 @@ app.use(rateLimiter(
 
 ))
 
+
+
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDocument  = YAML.load("./swagger.yaml")
+
 app.use(express.json());
 app.use(helmet())
 app.use(cors())
